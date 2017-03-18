@@ -1,0 +1,24 @@
+{
+  "name": "demo-bot",
+  "version": "0.1.0",
+  "description": "Demo Bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "xo && ava --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dohjon/demo-bot.git"
+  },
+  "keywords": [],
+  "author": "Jonathan Doherty <jonathan.doherty.work@outlook.com> (https://github.com/dohjon)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dohjon/demo-bot/issues"
+  },
+  "homepage": "https://github.com/dohjon/demo-bot#readme",
+  "devDependencies": {
+    "ava": "0.18.2",
+    "xo": "0.18.0"
+  }
+}
