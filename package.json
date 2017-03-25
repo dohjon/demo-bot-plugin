@@ -1,6 +1,6 @@
 {
   "name": "demo-bot-plugin",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Demo Bot Plugin",
   "main": "index.js",
   "scripts": {
