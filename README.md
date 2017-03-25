@@ -1,4 +1,4 @@
-# demo-bot-plugin [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
+# demo-bot-plugin [![Build Status](https://travis-ci.org/dohjon/demo-bot-plugin.svg?branch=master)](https://travis-ci.org/dohjon) [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
 
 > Demo Bot Core Plugin functionality
 

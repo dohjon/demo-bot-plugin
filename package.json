@@ -7,7 +7,7 @@
     "test": "xo && ava --verbose",
     "predeploy": "npm version patch",
     "deploy": "npm publish",
-    "postdeploy": "git push"
+    "postdeploy": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
