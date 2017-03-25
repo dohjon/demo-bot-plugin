@@ -4,7 +4,10 @@
   "description": "Demo Bot Plugin",
   "main": "index.js",
   "scripts": {
-    "test": "xo && ava --verbose"
+    "test": "xo && ava --verbose",
+    "predeploy": "npm version patch",
+    "deploy": "npm publish",
+    "postdeploy": "git push"
   },
   "repository": {
     "type": "git",
