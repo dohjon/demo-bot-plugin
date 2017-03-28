@@ -5,7 +5,7 @@ const inquirer = require('inquirer');
 
 class Plugin {
 	// eslint-disable-next-line no-unused-vars
-	constructor({id, questions = [], handler = answers => {}, before = () => {}}) {
+	constructor({id, questions = [], data = {}, handler = answers => {}, before = () => {}}) {
 		if (typeof id !== 'string') {
 			throw new TypeError(`Expected 'id' to be a string, got ${typeof id}`);
 		}
@@ -14,6 +14,9 @@ class Plugin {
 		}
 		if (!Array.isArray(questions)) {
 			throw new TypeError(`Expected 'questions' to be an array, got ${typeof questions}`);
+		}
+		if (typeof data !== 'object') {
+			throw new TypeError(`Expected 'data' to be an object, got ${typeof data}`);
 		}
 		if (typeof handler !== 'function') {
 			throw new TypeError(`Expected 'handler' to be a function, got ${typeof handler}`);
@@ -24,6 +27,7 @@ class Plugin {
 
 		this._id = id;
 		this._questions = questions;
+		this._data = data;
 		this._handler = handler;
 		this._before = before;
 	}

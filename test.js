@@ -127,3 +127,13 @@ test(`calling 'run' should return a promise`, t => {
 	const plugin = new Plugin({id: 'test'});
 	t.is(typeof plugin.run().then, 'function');
 });
+
+test(`plugin has default 'data' property`, t => {
+	const plugin = new Plugin({id: 'test'});
+	t.not(typeof plugin._data, 'undefined');
+});
+
+test(`'data' property should be an object`, t => {
+	const plugin = new Plugin({id: 'test'});
+	t.is(typeof plugin._data, 'object');
+});
