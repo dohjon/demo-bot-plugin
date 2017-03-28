@@ -18,7 +18,7 @@ const Plugin = require('demo-bot-plugin');
 // create plugin
 
 const plugin = new Plugin({
-	id: 'test',
+	name: 'test',
 	questions: [{
 			type: 'list',
 			name: 'theme',
@@ -47,12 +47,12 @@ Returns a `Plugin` instance.
 
 #### config
 
-##### id
+##### name
 
 Type: `string`<br>
 Required: `true`
 
-Plugin identifier.
+Plugin nameentifier.
 
 ##### questions
 
@@ -77,7 +77,7 @@ Hook that gets called before. Makes it possible to perform any actions before qu
 
 ```js
 const plugin = new Plugin({
-	id: 'test',
+	name: 'test',
 	questions: [{
 			type: 'list',
 			name: 'theme',

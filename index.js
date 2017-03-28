@@ -5,12 +5,12 @@ const inquirer = require('inquirer');
 
 class Plugin {
 	// eslint-disable-next-line no-unused-vars
-	constructor({id, questions = [], data = {}, handler = answers => {}, before = () => {}}) {
-		if (typeof id !== 'string') {
-			throw new TypeError(`Expected 'id' to be a string, got ${typeof id}`);
+	constructor({name, questions = [], data = {}, handler = answers => {}, before = () => {}}) {
+		if (typeof name !== 'string') {
+			throw new TypeError(`Expected 'name' to be a string, got ${typeof name}`);
 		}
-		if (!id) {
-			throw new TypeError(`Expected 'id' to contain a value, got '${id}'`);
+		if (!name) {
+			throw new TypeError(`Expected 'name' to contain a value, got '${name}'`);
 		}
 		if (!Array.isArray(questions)) {
 			throw new TypeError(`Expected 'questions' to be an array, got ${typeof questions}`);
@@ -25,7 +25,7 @@ class Plugin {
 			throw new TypeError(`Expected 'before' to be a function, got ${typeof handler}`);
 		}
 
-		this._id = id;
+		this._name = name;
 		this._questions = questions;
 		this._data = data;
 		this._handler = handler;
@@ -53,20 +53,20 @@ class Plugin {
 	}
 
 	run() {
-		debug(`running plugin ${this._id}`);
+		debug(`running plugin ${this._name}`);
 
 		return this.before()
 			.then(() => inquirer.prompt(this._questions))
 			.then(answers => {
-				debug(`plugin: ${this.id} answers received: ${JSON.stringify(answers, null, 2)}`);
+				debug(`plugin: ${this.name} answers received: ${JSON.stringify(answers, null, 2)}`);
 				return this._handler(answers);
 			})
 			.then(result => {
-				debug(`plugin ${this._id} ran succesfully`);
+				debug(`plugin ${this._name} ran succesfully`);
 				return result;
 			})
 			.catch(err => {
-				debug(`plugin ${this._id} failed!`);
+				debug(`plugin ${this._name} failed!`);
 				throw err;
 			});
 	}
